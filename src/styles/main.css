@@ -1,0 +1,46 @@
+@import "tailwindcss";
+
+:root {
+  --bg-primary: #ffffff;
+  --bg-secondary: #f8f9fa;
+  --bg-editor: #f4f4f4;
+  --text-primary: #1a1a2e;
+  --text-secondary: #6b7280;
+  --border-color: #e5e7eb;
+  --accent: #3b82f6;
+  --accent-hover: #2563eb;
+  --btn-bg: #e5e7eb;
+  --btn-hover: #d1d5db;
+}
+
+.dark {
+  --bg-primary: #0f172a;
+  --bg-secondary: #1e293b;
+  --bg-editor: #1e293b;
+  --text-primary: #e2e8f0;
+  --text-secondary: #94a3b8;
+  --border-color: #334155;
+  --accent: #60a5fa;
+  --accent-hover: #3b82f6;
+  --btn-bg: #334155;
+  --btn-hover: #475569;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.ͼ1 .cm-editor { height: 100%; }
+.ͼ1 .cm-scroller { overflow: auto; }
+.cm-editor { height: 100%; }
+.cm-editor .cm-content { font-family: 'JetBrains Mono', 'Fira Code', monospace; font-size: 14px; }
+
+.tool-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+.dark .tool-card:hover {
+  box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+}
