@@ -95,7 +95,7 @@ export function json2go(json: string, tagName = 'json', flatten = true): { go: s
     } else {
       go += 'struct {\n'
       for (const keyname of Object.keys(scope)) {
-        go += '\t'
+        for (let i = 0; i < depth; i++) go += '\t'
         const tn = format(keyname)
         go += tn + ' '
         parent = tn
@@ -104,6 +104,7 @@ export function json2go(json: string, tagName = 'json', flatten = true): { go: s
         if (omitempty && omitempty[keyname]) go += ',omitempty'
         go += '`\n'
       }
+      for (let i = 0; i < depth - 1; i++) go += '\t'
       go += '}'
     }
 

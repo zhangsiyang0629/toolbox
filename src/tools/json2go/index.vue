@@ -75,7 +75,7 @@ function handlePaste() {
       <div class="flex flex-col">
         <label class="text-sm font-medium mb-1" :style="{ color: 'var(--text-secondary)' }">JSON</label>
         <div class="flex-1 min-h-[400px]">
-          <CodeEditor v-model="input" lang="json" @paste="handlePaste" />
+          <CodeEditor v-model="input" lang="json" />
         </div>
       </div>
       <div class="flex flex-col">
