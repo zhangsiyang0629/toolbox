@@ -1,13 +1,13 @@
 <script setup lang="ts">
-const emit = defineEmits(['convert', 'copy', 'clear'])
-function click(t: 'convert' | 'copy' | 'clear') { emit(t) }
+import { useLocale } from '@/composables/useLocale'
+const { t } = useLocale()
 </script>
 
 <template>
   <div style="display: flex; justify-content: center; gap: 12px; padding: 12px 0;">
-    <button @click="click('convert')" class="btn-act"> 转换 </button>
-    <button @click="click('copy')" class="btn-act"> 复制 </button>
-    <button @click="click('clear')" class="btn-act"> 清空 </button>
+    <button @click="$emit('convert')" class="btn-act"> {{ t('tool.convert') }} </button>
+    <button @click="$emit('copy')" class="btn-act"> {{ t('tool.copy') }} </button>
+    <button @click="$emit('clear')" class="btn-act"> {{ t('tool.clear') }} </button>
   </div>
 </template>
 

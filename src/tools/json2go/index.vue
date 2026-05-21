@@ -7,9 +7,11 @@ import HistoryPanel from '@/components/HistoryPanel.vue'
 import { useHistoryStore } from '@/stores/history'
 import { useCopy } from '@/composables/useCopy'
 import { usePageMeta } from '@/composables/usePageMeta'
+import { useLocale } from '@/composables/useLocale'
 import { json2go } from './converter'
 
-usePageMeta('JSON转Go Struct', '在线JSON转Golang Struct工具，支持展开/嵌套两种模式，自动生成Go结构体代码')
+const { t } = useLocale()
+usePageMeta(t('tools.json2go.title'), t('seo.json2go'))
 
 const input = ref('{\n  "name": "example",\n  "age": 25\n}')
 const output = ref('')
@@ -22,7 +24,7 @@ const { copy } = useCopy()
 function convert() {
   const res = json2go(input.value, tagName.value, flatten.value)
   if (res.error) {
-    output.value = '错误: ' + res.error
+    output.value = t('tool.error') + ': ' + res.error
   } else {
     output.value = res.go
     historyStore.add('json2go', input.value, output.value)
@@ -31,18 +33,9 @@ function convert() {
 
 onMounted(convert)
 
-function copyOutput() {
-  copy(output.value)
-}
-
-function handleClear() {
-  input.value = ''
-  output.value = ''
-}
-
-function handlePaste() {
-  setTimeout(convert, 10)
-}
+function copyOutput() { copy(output.value) }
+function handleClear() { input.value = ''; output.value = '' }
+function handlePaste() { setTimeout(convert, 10) }
 </script>
 
 <template>
@@ -50,21 +43,21 @@ function handlePaste() {
     <AdBanner position="header" />
 
     <div class="flex items-center justify-between mb-2">
-      <h1 class="text-xl font-bold">JSON 转 Go Struct</h1>
+      <h1 class="text-xl font-bold">{{ t('tools.json2go.title') }}</h1>
       <div class="flex items-center gap-3">
         <label class="text-sm flex items-center gap-1" :style="{ color: 'var(--text-secondary)' }">
-          模式：
+          {{ t('tool.mode') }}：
           <select v-model="flatten" class="px-2 py-1 rounded text-sm border" :style="{ backgroundColor: 'var(--bg-secondary)', color: 'var(--text-primary)', borderColor: 'var(--border-color)' }">
-            <option :value="true">展开</option>
-            <option :value="false">嵌套</option>
+            <option :value="true">{{ t('tool.expand') }}</option>
+            <option :value="false">{{ t('tool.nest') }}</option>
           </select>
         </label>
         <label class="text-sm flex items-center gap-1" :style="{ color: 'var(--text-secondary)' }">
-          Tag：
+          {{ t('tool.tag') }}：
           <input v-model="tagName" class="px-2 py-1 rounded text-sm border w-16" :style="{ backgroundColor: 'var(--bg-secondary)', color: 'var(--text-primary)', borderColor: 'var(--border-color)' }" />
         </label>
         <button @click="showHistory = !showHistory" class="text-sm px-3 py-1.5 rounded transition-colors" :style="{ backgroundColor: 'var(--btn-bg)', color: 'var(--text-primary)' }">
-          历史
+          {{ t('tool.history') }}
         </button>
       </div>
     </div>
@@ -73,13 +66,13 @@ function handlePaste() {
 
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-4" :class="showHistory ? 'lg:grid-cols-3' : ''">
       <div class="flex flex-col">
-        <label class="text-sm font-medium mb-1" :style="{ color: 'var(--text-secondary)' }">JSON</label>
+        <label class="text-sm font-medium mb-1" :style="{ color: 'var(--text-secondary)' }">{{ t('tools.json2go.input') }}</label>
         <div class="flex-1 min-h-[400px]">
           <CodeEditor v-model="input" lang="json" />
         </div>
       </div>
       <div class="flex flex-col">
-        <label class="text-sm font-medium mb-1" :style="{ color: 'var(--text-secondary)' }">GO</label>
+        <label class="text-sm font-medium mb-1" :style="{ color: 'var(--text-secondary)' }">{{ t('tools.json2go.output') }}</label>
         <div class="flex-1 min-h-[400px]">
           <CodeEditor v-model="output" lang="go" :readonly="true" />
         </div>

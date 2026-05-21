@@ -1,4 +1,5 @@
 import { XMLParser } from 'fast-xml-parser'
+import { t } from '@/composables/useLocale'
 
 const parser = new XMLParser({
   ignoreAttributes: false,
@@ -14,6 +15,6 @@ export function xml2json(xml: string): { data?: string; error?: string } {
     const result = parser.parse(xml)
     return { data: JSON.stringify(result, null, 2) }
   } catch (e: any) {
-    return { error: e.message || 'XML 解析失败' }
+    return { error: e.message || t('error.xmlParseFailed') }
   }
 }

@@ -1,4 +1,5 @@
 import { Parser } from 'node-sql-parser'
+import { t } from '@/composables/useLocale'
 
 const parser = new Parser()
 
@@ -20,7 +21,7 @@ export interface TableDef {
 export function parseSQL(sql: string): { tables?: TableDef[]; error?: string } {
   const trimmed = sql.trim().toUpperCase()
   if (!trimmed.startsWith('CREATE TABLE')) {
-    return { error: '请输入 CREATE TABLE 语句，本工具仅支持 DDL 转换' }
+    return { error: t('error.sqlOnlyDDL') }
   }
   try {
     const ast = parser.astify(sql)
@@ -91,10 +92,10 @@ export function parseSQL(sql: string): { tables?: TableDef[]; error?: string } {
       tables.push({ tableName, columns })
     }
 
-    if (tables.length === 0) return { error: '未找到 CREATE TABLE 语句' }
+    if (tables.length === 0) return { error: t('error.noCreateTable') }
     return { tables }
   } catch (e: any) {
-    return { error: e.message || 'SQL 解析失败' }
+    return { error: e.message || t('error.parseFailed') }
   }
 }
 
@@ -162,7 +163,7 @@ function formatStructName(name: string): string {
 export function sql2gorm(sql: string): string | { error: string } {
   const result = parseSQL(sql)
   if (result.error) return { error: result.error }
-  if (!result.tables) return { error: '解析结果为空' }
+  if (!result.tables) return { error: t('error.parseResultEmpty') }
 
   return result.tables.map(table => {
     const structName = formatStructName(table.tableName)
@@ -199,7 +200,7 @@ function toGormGoType(sqlType: string): string {
 export function sql2entgo(sql: string): string | { error: string } {
   const result = parseSQL(sql)
   if (result.error) return { error: result.error }
-  if (!result.tables) return { error: '解析结果为空' }
+  if (!result.tables) return { error: t('error.parseResultEmpty') }
 
   return result.tables.map(table => {
     const structName = formatStructName(table.tableName)
@@ -227,7 +228,7 @@ export function sql2entgo(sql: string): string | { error: string } {
 export function sql2es(sql: string): string | { error: string } {
   const result = parseSQL(sql)
   if (result.error) return { error: result.error }
-  if (!result.tables) return { error: '解析结果为空' }
+  if (!result.tables) return { error: t('error.parseResultEmpty') }
 
   return result.tables.map(table => {
     let code = '{\n'
@@ -250,7 +251,7 @@ export function sql2es(sql: string): string | { error: string } {
 export function sql2gozero(sql: string): string | { error: string } {
   const result = parseSQL(sql)
   if (result.error) return { error: result.error }
-  if (!result.tables) return { error: '解析结果为空' }
+  if (!result.tables) return { error: t('error.parseResultEmpty') }
 
   return result.tables.map(table => {
     const structName = formatStructName(table.tableName)
@@ -269,7 +270,7 @@ export function sql2gozero(sql: string): string | { error: string } {
 export function sql2mongodb(sql: string): string | { error: string } {
   const result = parseSQL(sql)
   if (result.error) return { error: result.error }
-  if (!result.tables) return { error: '解析结果为空' }
+  if (!result.tables) return { error: t('error.parseResultEmpty') }
 
   return result.tables.map(table => {
     let code = '// Collection: ' + table.tableName + '\n'
