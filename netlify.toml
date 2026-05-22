@@ -1,5 +1,4 @@
 [build]
-  base = "toolbox"
   command = "npm ci && npm run build"
   publish = "dist"
 
