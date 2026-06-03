@@ -9,92 +9,92 @@
 
 <url>
   <loc>https://romandy-toolbox.netlify.app/</loc>
-  <lastmod>2026-05-22T02:00:52+00:00</lastmod>
+  <lastmod>2026-06-03T00:00:00+00:00</lastmod>
 </url>
 
 <url>
-  <loc>https://romandy-toolbox.netlify.app/json-to-go</loc>
-  <lastmod>2026-05-22T02:00:52+00:00</lastmod>
+  <loc>https://romandy-toolbox.netlify.app/tools/json2go</loc>
+  <lastmod>2026-06-03T00:00:00+00:00</lastmod>
 </url>
 
 <url>
   <loc>https://romandy-toolbox.netlify.app/tools/xml2json</loc>
-  <lastmod>2026-05-22T02:00:52+00:00</lastmod>
+  <lastmod>2026-06-03T00:00:00+00:00</lastmod>
 </url>
 
 <url>
   <loc>https://romandy-toolbox.netlify.app/tools/sql2gorm</loc>
-  <lastmod>2026-05-22T02:00:52+00:00</lastmod>
+  <lastmod>2026-06-03T00:00:00+00:00</lastmod>
 </url>
 
 <url>
   <loc>https://romandy-toolbox.netlify.app/tools/yaml2go</loc>
-  <lastmod>2026-05-22T02:00:52+00:00</lastmod>
+  <lastmod>2026-06-03T00:00:00+00:00</lastmod>
 </url>
 
 <url>
   <loc>https://romandy-toolbox.netlify.app/tools/sql2ent</loc>
-  <lastmod>2026-05-22T02:00:52+00:00</lastmod>
+  <lastmod>2026-06-03T00:00:00+00:00</lastmod>
 </url>
 
 <url>
   <loc>https://romandy-toolbox.netlify.app/tools/sql2es</loc>
-  <lastmod>2026-05-22T02:00:52+00:00</lastmod>
+  <lastmod>2026-06-03T00:00:00+00:00</lastmod>
 </url>
 
 <url>
   <loc>https://romandy-toolbox.netlify.app/tools/sql2gozero</loc>
-  <lastmod>2026-05-22T02:00:52+00:00</lastmod>
+  <lastmod>2026-06-03T00:00:00+00:00</lastmod>
 </url>
 
 <url>
   <loc>https://romandy-toolbox.netlify.app/tools/sql2mongodb</loc>
-  <lastmod>2026-05-22T02:00:52+00:00</lastmod>
+  <lastmod>2026-06-03T00:00:00+00:00</lastmod>
 </url>
 
 <url>
   <loc>https://romandy-toolbox.netlify.app/tools/uuid-generator</loc>
-  <lastmod>2026-05-25T14:00:00+00:00</lastmod>
+  <lastmod>2026-06-03T00:00:00+00:00</lastmod>
 </url>
 
 <url>
   <loc>https://romandy-toolbox.netlify.app/tools/password-generator</loc>
-  <lastmod>2026-05-25T14:00:00+00:00</lastmod>
+  <lastmod>2026-06-03T00:00:00+00:00</lastmod>
 </url>
 
 <url>
   <loc>https://romandy-toolbox.netlify.app/tools/timestamp</loc>
-  <lastmod>2026-05-25T14:00:00+00:00</lastmod>
+  <lastmod>2026-06-03T00:00:00+00:00</lastmod>
 </url>
 
 <url>
   <loc>https://romandy-toolbox.netlify.app/tools/json-formatter</loc>
-  <lastmod>2026-05-25T14:00:00+00:00</lastmod>
+  <lastmod>2026-06-03T00:00:00+00:00</lastmod>
 </url>
 
 <url>
   <loc>https://romandy-toolbox.netlify.app/tools/qrcode</loc>
-  <lastmod>2026-05-25T14:00:00+00:00</lastmod>
+  <lastmod>2026-06-03T00:00:00+00:00</lastmod>
 </url>
 
 <url>
   <loc>https://romandy-toolbox.netlify.app/tools/regex</loc>
-  <lastmod>2026-05-25T14:00:00+00:00</lastmod>
+  <lastmod>2026-06-03T00:00:00+00:00</lastmod>
 </url>
 
 <url>
   <loc>https://romandy-toolbox.netlify.app/knowledge/json</loc>
-  <lastmod>2026-05-25T14:00:00+00:00</lastmod>
+  <lastmod>2026-06-03T00:00:00+00:00</lastmod>
 </url>
 
 <url>
   <loc>https://romandy-toolbox.netlify.app/knowledge/regex</loc>
-  <lastmod>2026-05-25T14:00:00+00:00</lastmod>
+  <lastmod>2026-06-03T00:00:00+00:00</lastmod>
 </url>
 
 <url>
   <loc>https://romandy-toolbox.netlify.app/knowledge/qrcode</loc>
-  <lastmod>2026-05-25T14:00:00+00:00</lastmod>
+  <lastmod>2026-06-03T00:00:00+00:00</lastmod>
 </url>
 
 </urlset>
