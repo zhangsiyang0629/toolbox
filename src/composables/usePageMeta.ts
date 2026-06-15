@@ -7,4 +7,12 @@ export function usePageMeta(title: string, description?: string) {
     document.head.appendChild(meta)
   }
   if (description) meta.setAttribute('content', description)
+
+  let canonical = document.querySelector('link[rel="canonical"]')
+  if (!canonical) {
+    canonical = document.createElement('link')
+    canonical.setAttribute('rel', 'canonical')
+    document.head.appendChild(canonical)
+  }
+  canonical.setAttribute('href', window.location.origin + window.location.pathname)
 }
